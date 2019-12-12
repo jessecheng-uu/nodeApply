@@ -1,0 +1,68 @@
+{
+  "appenders": {
+    "console": {
+      "type": "console"
+    },
+    "log_file": {
+      "type": "file",
+      "filename": "../logs/info",
+      "maxLogSize": 20971520,
+      "backups": 3,
+      "alwaysIncludePattern": true,
+      "daysToKeep": 10,
+      "pattern": "_yyyy-MM-dd-hh.log",
+      "encoding": "utf-8"
+    },
+    "data_file": {
+      "type": "dateFile",
+      "filename": "../logs/trace",
+      "alwaysIncludePattern": true,
+      "daysToKeep": 10,
+      "pattern": "_yyyy-MM-dd-hh.log",
+      "encoding": "utf-8"
+    },
+    "error_file": {
+      "type": "dateFile",
+      "filename": "../logs/error",
+      "alwaysIncludePattern": true,
+      "daysToKeep": 10,
+      "pattern": "_yyyy-MM-dd.log",
+      "encoding": "utf-8"
+    }
+  },
+  "categories": {
+    "default": {
+      "appenders": [
+        "data_file",
+        "console",
+        "log_file"
+      ],
+      "level": "info"
+    },
+    "production": {
+      "appenders": [
+        "data_file"
+      ],
+      "level": "warn"
+    },
+    "console": {
+      "appenders": [
+        "console"
+      ],
+      "level": "debug"
+    },
+    "debug": {
+      "appenders": [
+        "console",
+        "log_file"
+      ],
+      "level": "debug"
+    },
+    "error_log": {
+      "appenders": [
+        "error_file"
+      ],
+      "level": "error"
+    }
+  }
+}
