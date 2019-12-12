@@ -1,2 +1,10 @@
 # nodeApply
-node mongodb express jwt 
+CURD by node + express + jwt + mongodb
+
+# Run service
+npm install
+npm start
+
+# use postman test api
+
+
